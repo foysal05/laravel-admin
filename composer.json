@@ -1,0 +1,60 @@
+{
+    "name": "foysal05/laravel-admin",
+    "description": "laravel admin",
+    "type": "library",
+    "keywords": ["laravel", "admin", "grid", "form"],
+    "homepage": "https://github.com/foysal05/laravel-admin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "foysal05",
+            "email": "foysal.int@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "symfony/dom-crawler": "^6.4|^7.0",
+        "laravel/framework": ">=10.17.0 <10.25.0",
+        "doctrine/dbal": "^3.8"
+    },
+    "require-dev": {
+        "laravel/laravel": ">=10.17.0 <10.25.0",
+        "fzaninotto/faker": "*",
+        "intervention/image": "1.2.0",
+        "laravel/browser-kit-testing": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Encore\\Admin\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Models\\": "tests/models",
+            "Tests\\Controllers\\": "tests/controllers"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    },
+    "suggest": {
+        "intervention/image": "Required to handling and manipulation upload images (~2.3).",
+        "spatie/eloquent-sortable": "Required to built orderable gird."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Encore\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Admin": "Encore\\Admin\\Facades\\Admin"
+            }
+        }
+    }
+}
